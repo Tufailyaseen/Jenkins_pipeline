@@ -13,7 +13,7 @@ RUN yum -y install nginx
 #COPY . /usr/share/nginx/html
 #COPY  /home/zigron/Dockerfilels/newindex/indexhtml  usr/share/nginx/html/index.html
 #COPY /usr/share/nginx/html
-COPY .  /usr/share/nginx/html 
+#COPY .  /usr/share/nginx/html 
 
 
 ENTRYPOINT ["/usr/sbin/nginx", "-g", "daemon off;"]
