@@ -1,0 +1,34 @@
+version: '3.2'
+services:
+        nginx_ubuntu:
+                build:
+                 context:  /home/zigron/Downloads/static-website-example-master/
+                 dockerfile: Dockerfile
+                container_name: nginx_comp_ubt
+                image: nginx_ubuntu_comp
+                volumes:
+                    - /home/zigron/Downloads/netflix.github.com-master:/var/www/html
+                ports:
+                    - 3251:80
+
+        nginx_centos:
+              build:
+               context: /home/zigron/Desktop/project-website-template-master/ 
+               dockerfile: Dockerfile
+              container_name: nginx_comp_centos
+              image: nginx_centos_comp
+              volumes:
+                - /var/www/project-website-template-master:/usr/share/nginx/html
+              ports:
+                - 3252:80
+        nginx_alpine:
+              build:
+               context: /home/zigron/nginx_conf/
+               dockerfile: Dockerfile
+              container_name: nginx_comp_alpine
+              image: nginx_alpine_comp
+              volumes:
+                - /home/zigron/Downloads/one-html-page-challenge-master:/usr/share/nginx/html
+                  # - /etc/nginx/:/etc/nginx/ 
+              ports:
+                - 3253:80
